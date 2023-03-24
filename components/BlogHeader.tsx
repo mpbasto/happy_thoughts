@@ -1,7 +1,10 @@
 import { PortableText } from '@portabletext/react'
+import Image from 'next/image'
 import Link from 'next/link'
 
+import favicon from '../public/favicon/favicon.ico'
 import styles from './BlogHeader.module.css'
+
 
 export default function BlogHeader({
   title,
@@ -19,11 +22,12 @@ export default function BlogHeader({
           <h1 className="text-6xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl">
             {title}
           </h1>
-          <h4
+          <Image alt="leeerob" src={favicon} width="100" height="100"/>
+          <h2
             className={`mt-5 text-center text-lg md:pl-8 md:text-left ${styles.portableText}`}
           >
             <PortableText value={description} />
-          </h4>
+          </h2>
         </header>
       )
 
