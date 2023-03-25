@@ -11,12 +11,12 @@ export default function AuthorAvatar(props: Author) {
           src={
             picture?.asset?._ref
               ? urlForImage(picture).height(96).width(96).fit('crop').url()
-              : 'https://source.unsplash.com/96x96/?face'
+              : 'https://cdn.sanity.io/images/96tcnw0k/production/721948d2dec91bb6e88ba351487a36d51cc67143-64x64.png'
           }
           className="rounded-full"
           height={96}
           width={96}
-          // @TODO add alternative text to avatar image schema
+          // TODO: add alternative text to avatar image schema
           alt=""
         />
       </div>
@@ -24,3 +24,4 @@ export default function AuthorAvatar(props: Author) {
     </div>
   )
 }
+
