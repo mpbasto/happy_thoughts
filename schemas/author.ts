@@ -17,8 +17,8 @@ export default defineType({
       name: 'picture',
       title: 'Picture',
       type: 'image',
-      options: { hotspot: true },
-      validation: (rule) => rule.required(),
+      //options: { hotspot: true },
+     // validation: (rule) => rule.required(),
     }),
   ],
 })
