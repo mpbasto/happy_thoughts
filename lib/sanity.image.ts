@@ -1,7 +1,10 @@
-import createImageUrlBuilder from '@sanity/image-url'
-import { dataset, projectId } from 'lib/sanity.api'
+import imageUrlBuilder from '@sanity/image-url'
+import React from 'react'
 
-const imageBuilder = createImageUrlBuilder({ projectId, dataset })
+import {client} from './sanity'
 
-export const urlForImage = (source: any) =>
-  imageBuilder.image(source).auto('format').fit('max')
+const builder = imageUrlBuilder(client)
+
+export function urlFor(source) {
+  return builder.image(source).auto('format').fit('max')
+}

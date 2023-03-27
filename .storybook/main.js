@@ -11,6 +11,12 @@ module.exports = {
   ],
   "framework": "@storybook/react",
   typescript: {
-    reactDocgen: 'react-docgen-typescript-plugin'
+    check: false,
+    checkOptions: {},
+    reactDocgen: 'react-docgen-typescript-plugin',
+    reactDocgenTypescriptOptions: {
+      shouldExtractLiteralValuesFromEnum: true,
+      propFilter: (prop) => (prop.parent ? !/node_modules/.test(prop.parent.fileName) : true),
+    },
   },
 }

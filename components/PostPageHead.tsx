@@ -1,6 +1,6 @@
 import BlogMeta from 'components/BlogMeta'
 import * as demo from 'lib/demo.data'
-import { urlForImage } from 'lib/sanity.image'
+import { urlFor } from 'lib/sanity.image'
 import { Post, Settings } from 'lib/sanity.queries'
 import Head from 'next/head'
 
@@ -18,7 +18,7 @@ export default function PostPageHead({ settings, post }: PostPageHeadProps) {
       {post.coverImage?.asset?._ref && (
         <meta
           property="og:image"
-          content={urlForImage(post.coverImage)
+          content={urlFor(post.coverImage)
             .width(1200)
             .height(627)
             .fit('crop')

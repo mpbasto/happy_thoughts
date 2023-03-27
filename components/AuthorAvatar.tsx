@@ -1,6 +1,7 @@
-import { urlForImage } from 'lib/sanity.image'
-import type { Author } from 'lib/sanity.queries'
 import Image from 'next/image'
+
+import { urlFor } from '../lib/sanity.image'
+import type { Author } from '../lib/sanity.queries'
 
 export default function AuthorAvatar(props: Author) {
   const { name, picture } = props
@@ -10,7 +11,7 @@ export default function AuthorAvatar(props: Author) {
         <Image
           src={
             picture?.asset?._ref
-              ? urlForImage(picture).height(96).width(96).fit('crop').url()
+              ? urlFor(picture).height(96).width(96).fit('crop').url()
               : 'https://cdn.sanity.io/images/96tcnw0k/production/721948d2dec91bb6e88ba351487a36d51cc67143-64x64.png'
           }
           className="rounded-full"

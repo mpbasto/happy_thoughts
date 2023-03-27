@@ -1,5 +1,5 @@
 import cn from 'classnames'
-import { urlForImage } from 'lib/sanity.image'
+import { urlFor } from 'lib/sanity.image'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -23,7 +23,7 @@ export default function CoverImage(props: CoverImageProps) {
         width={2000}
         height={1000}
         alt={`Cover Image for ${title}`}
-        src={urlForImage(source).height(1000).width(2000).url()}
+        src={urlFor(source).height(1000).width(2000).url()}
         sizes="100vw"
         priority={priority}
       />
