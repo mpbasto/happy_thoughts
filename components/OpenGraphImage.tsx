@@ -37,7 +37,7 @@ export function OpenGraphImage(props: { title: string }) {
           justifyContent: 'center',
         }}
       >
-        <Image src="../public/image.svg" alt="icon" />
+{/* TODO: Add SVG */}
       </div>
       <div
         style={{

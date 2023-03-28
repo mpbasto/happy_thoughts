@@ -1,12 +1,11 @@
 import { CogIcon } from '@sanity/icons'
-import * as demo from 'lib/demo.data'
 import { defineArrayMember, defineField, defineType } from 'sanity'
 
 import OpenGraphInput from './OpenGraphInput'
 
 export default defineType({
   name: 'settings',
-  title: 'Settings',
+  title: 'Site Settings',
   type: 'document',
   icon: CogIcon,
   preview: { select: { title: 'title', subtitle: 'description' } },
@@ -18,7 +17,6 @@ export default defineType({
       description: 'This field is the title of your blog.',
       title: 'Title',
       type: 'string',
-      initialValue: demo.title,
       validation: (rule) => rule.required(),
     }),
     defineField({
@@ -27,7 +25,6 @@ export default defineType({
         'Used both for the <meta> description tag for SEO, and the blog subheader.',
       title: 'Description',
       type: 'array',
-      initialValue: demo.description,
       of: [
         defineArrayMember({
           type: 'block',
@@ -55,11 +52,12 @@ export default defineType({
       ],
       validation: (rule) => rule.max(155).required(),
     }),
+    // TODO: LOOK INTO THIS
     defineField({
       name: 'ogImage',
       title: 'Open Graph Image',
       description:
-        'Used for social media previews when linking to the index page.',
+        'Used for social media previews when linking to the index page. TBD',
       type: 'object',
       components: {
         input: OpenGraphInput as any,
@@ -69,7 +67,6 @@ export default defineType({
           name: 'title',
           title: 'Title',
           type: 'string',
-          initialValue: demo.ogImageTitle,
         }),
       ],
     }),
