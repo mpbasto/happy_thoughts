@@ -5,7 +5,6 @@ import Link from 'next/link'
 import favicon from '../public/favicon/favicon.ico'
 import styles from './BlogHeader.module.css'
 
-
 export default function BlogHeader({
   title,
   description,
@@ -19,10 +18,11 @@ export default function BlogHeader({
     case 1:
       return (
         <header className="mt-16 mb-10 flex flex-col items-center md:mb-12 md:flex-row md:justify-between">
+          <Image alt="leeerob" src={favicon} width="100" height="100" />
           <h1 className="text-6xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl">
             {title}
           </h1>
-          <Image alt="leeerob" src={favicon} width="100" height="100"/>
+
           <h2
             className={`mt-5 text-center text-lg md:pl-8 md:text-left ${styles.portableText}`}
           >
