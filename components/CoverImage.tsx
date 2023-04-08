@@ -1,7 +1,8 @@
 import cn from 'classnames'
-import { urlFor } from 'lib/sanity.image'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import { urlFor } from '../lib/sanity.image'
 
 interface CoverImageProps {
   title: string
